@@ -7,7 +7,8 @@
 		"build": "remotion render src/index.tsx Empty out/video.mp4",
 		"upgrade": "remotion upgrade",
 		"test": "eslint src --ext ts,tsx,js,jsx && tsc",
-		"lint": "eslint src --ext ts,tsx,js,jsx --fix"
+		"lint": "eslint src --ext ts,tsx,js,jsx --fix",
+		"prepare": "husky install"
 	},
 	"repository": {},
 	"license": "UNLICENSED",
@@ -33,6 +34,7 @@
 		"eslint-plugin-prettier": "^4.0.0",
 		"eslint-plugin-react": "^7.26.1",
 		"eslint-plugin-react-hooks": "^4.2.0",
-		"prettier": "2.4.1"
+		"prettier": "2.4.1",
+		"husky": "^7.0.0"
 	}
 }
