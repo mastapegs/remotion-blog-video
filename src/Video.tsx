@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Composition } from 'remotion';
 
-const EmptyComponent = () => null;
+const EmptyComponent: FC = () => null;
 
 export const RemotionVideo: FC = () => {
 	return (
