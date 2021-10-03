@@ -1,8 +1,9 @@
-import {Composition} from 'remotion';
+import { FC } from 'react';
+import { Composition } from 'remotion';
 
 const EmptyComponent = () => null;
 
-export const RemotionVideo: React.FC = () => {
+export const RemotionVideo: FC = () => {
 	return (
 		<>
 			<Composition
