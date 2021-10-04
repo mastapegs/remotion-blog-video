@@ -16,7 +16,7 @@ const Model = ({ ...props }) => {
 	return (
 		<group
 			ref={group}
-			rotation={[0, frame * 0.008, 0]}
+			rotation={[0, frame * 0.01, 0]}
 			{...props}
 			dispose={null}
 		>
@@ -27,7 +27,5 @@ const Model = ({ ...props }) => {
 		</group>
 	);
 };
-
-useGLTF.preload('/Earth.glb');
 
 export default Model;

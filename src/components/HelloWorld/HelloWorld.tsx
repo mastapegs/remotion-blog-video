@@ -98,9 +98,13 @@ export const HelloWorld: FC<HelloWorldProps> = ({ firstText, secondText }) => {
 			</Sequence>
 			<Sequence name="Earth" from={mainTextFadeOutFrame + mainTextFadeOutTime}>
 				<div style={{ opacity: earthOpacity }}>
-					<ThreeCanvas width={1920} height={1080}>
-						<ambientLight />
-						<pointLight position={[10, 10, 10]} />
+					<ThreeCanvas
+						width={1920}
+						height={1080}
+						camera={{ fov: 75, position: [0, 2, -7] }}
+					>
+						{/* <ambientLight /> */}
+						<pointLight position={[-5, 2, -5]} />
 						<Suspense fallback={null}>
 							<Earth scale={0.005} />
 						</Suspense>
