@@ -34,7 +34,7 @@ export const HelloWorld: FC<HelloWorldProps> = ({ firstText, secondText }) => {
 				fontFamily: 'Arial, Helvetica, sans-serif',
 			}}
 		>
-			<Sequence from={0}>
+			<Sequence name="FirstText" from={0}>
 				<div
 					style={{
 						position: 'absolute',
@@ -47,7 +47,7 @@ export const HelloWorld: FC<HelloWorldProps> = ({ firstText, secondText }) => {
 					{firstText}
 				</div>
 			</Sequence>
-			<Sequence from={150}>
+			<Sequence name="SecondText" from={150}>
 				<div
 					style={{
 						position: 'absolute',
