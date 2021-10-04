@@ -1,26 +1,32 @@
 import { FC } from 'react';
-import { interpolate, useCurrentFrame } from 'remotion';
+import { interpolate, useCurrentFrame, Sequence } from 'remotion';
 
 type HelloWorldProps = {
-	text: string;
+	firstText: string;
+	secondText: string;
 };
-export const HelloWorld: FC<HelloWorldProps> = ({ text }) => {
+export const HelloWorld: FC<HelloWorldProps> = ({ firstText, secondText }) => {
 	const frame = useCurrentFrame();
 
 	const fadeInTime = 90;
-	const startFrame = 30;
-	const opacity = interpolate(
+
+	const firstTextStartFrame = 30;
+	const firstTextOpacity = interpolate(
 		frame,
-		[startFrame, startFrame + fadeInTime],
+		[firstTextStartFrame, firstTextStartFrame + fadeInTime],
+		[0, 1]
+	);
+
+	const secondTextStartFrame = 150;
+	const secondTextOpacity = interpolate(
+		frame,
+		[secondTextStartFrame, secondTextStartFrame + fadeInTime],
 		[0, 1]
 	);
 
 	return (
 		<div
 			style={{
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'center',
 				flex: 1,
 				backgroundColor: 'black',
 				color: 'cyan',
@@ -28,7 +34,33 @@ export const HelloWorld: FC<HelloWorldProps> = ({ text }) => {
 				fontFamily: 'Arial, Helvetica, sans-serif',
 			}}
 		>
-			<div style={{ opacity }}>{text}</div>
+			<Sequence from={0}>
+				<div
+					style={{
+						position: 'absolute',
+						opacity: firstTextOpacity,
+						top: 250,
+						left: '50%',
+						transform: 'translateX(-50%)',
+					}}
+				>
+					{firstText}
+				</div>
+			</Sequence>
+			<Sequence from={150}>
+				<div
+					style={{
+						position: 'absolute',
+						opacity: secondTextOpacity,
+						margin: '0 auto',
+						top: 550,
+						left: '50%',
+						transform: 'translateX(-50%)',
+					}}
+				>
+					{secondText}
+				</div>
+			</Sequence>
 		</div>
 	);
 };

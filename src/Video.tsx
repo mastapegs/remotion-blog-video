@@ -13,7 +13,8 @@ export const RemotionVideo: FC = () => {
 				width={1920}
 				height={1080}
 				defaultProps={{
-					text: 'Hello, World!',
+					firstText: 'Hello',
+					secondText: 'World!',
 				}}
 			/>
 		</>
