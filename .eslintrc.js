@@ -38,6 +38,7 @@ module.exports = {
 		],
 		'import/prefer-default-export': 'off',
 		'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
+		'react/jsx-props-no-spreading': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'prettier/prettier': 'error',
 	},

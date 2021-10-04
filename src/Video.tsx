@@ -8,7 +8,7 @@ export const RemotionVideo: FC = () => {
 			<Composition
 				id="HelloWorld"
 				component={HelloWorld}
-				durationInFrames={240}
+				durationInFrames={720}
 				fps={60}
 				width={1920}
 				height={1080}
